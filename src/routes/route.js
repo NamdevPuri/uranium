@@ -1,19 +1,27 @@
 const express = require('express');
-const logger = require('./logger')
+const logger = require('../logger/logger.js')
+const assign = require('../util/helper')
 
 const router = express.Router();
 
-router.get('/test-me', function (req, res) {
-    console.log('I am inside the first route handler')
-    console.log('The endpoint value is', logger.endpoint)
-    console.log('Calling log function')
-    logger.logging()
+router.get('/test-me', function (req, res) { 
+   //console.log(logger.welcome())
+
+//    logger.welcomeMassags();
+
+
     res.send('My first ever api!')
 });
 
-router.get('/test-me2', function (req, res) {
-    console.log('I am inside the second route handler')
-    res.send('My second ever api!')
+router.get('/hello', function (req, res) {
+  const months = ['january','february','march','april','may','june','july','augest','september','october','november','december']
+
+    res.send('<h1> Namdev Puri<h1>'+'my fourth API')
+    console.log(lodesh.chunk(months,4))
+
+    const odd = [1,3,5,7,9,11,13,15,17,19];
+    let lodash=requrier('lodash');
+    console.log(lodash.tail(odd));
 });
 
 
